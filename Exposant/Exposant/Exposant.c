@@ -19,7 +19,12 @@ int main(int argc, char* argv[])
 		fprintf(stderr, "L'argument 1 n'est pas un nombre flottant valide: %s\n", strarg1);
 		return 1;
 	}
-	fprintf(stdout, "flottant: %.5g", arg1);
+	printf("flottant: %.5g\n", arg1);
+
+	// Convertir le premier argument en unsigned int
+	unsigned u1 = asUnsigned(arg1);
+	printf("hex: %08X (%d)\n", u1, u1);
+
 	
 	return 0;
 }
