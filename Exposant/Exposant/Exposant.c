@@ -34,8 +34,18 @@ int main(int argc, char* argv[])
 
 	printf("exposant brut: %.8s\n", &binStr[1]);
 	unsigned exposant = (u1 << 1) >> 24;
-	printf("exposant reel: %d - 127 = %d", exposant, exposant - 127);
+	printf("exposant reel: %d - 127 = %d\n", exposant, exposant - 127);
 
+	
+	printf("signe: ");
+
+	unsigned mask = 1;
+	mask = mask << 31;
+
+	if (u1 & mask)
+		printf("negatif");
+	else
+		printf("positif");
 
 	
 	return 0;

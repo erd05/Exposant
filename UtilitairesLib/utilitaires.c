@@ -20,7 +20,11 @@ bool strToBool(const char* str, bool* bool__out)
 
 bool strToInt(const char* str, int* int_out)
 {
-	if (_stricmp(str, "+0") == 0 || _stricmp(str, "0") == 0 || _stricmp(str, "-0") == 0) {
+	if (_stricmp(str, "+0") == 0 || _stricmp(str, "0") == 0) {
+		* int_out = 0;
+		return true;
+	}
+	if (_stricmp(str, "-0") == 0) {
 		* int_out = 0;
 		return true;
 	}
@@ -35,9 +39,13 @@ bool strToInt(const char* str, int* int_out)
 
 bool strToFloat(const char* str, float* float_out)
 {
-	if (_stricmp(str, "+0") == 0 || _stricmp(str, "0") == 0 || _stricmp(str, "-0") == 0 || _stricmp(str, "0.0") == 0 ||
-		_stricmp(str, "-0.0") == 0 || _stricmp(str, "+0.0") == 0) {
+	if (_stricmp(str, "+0") == 0 || _stricmp(str, "0") == 0 ||  _stricmp(str, "0.0") == 0 ||
+		 _stricmp(str, "+0.0") == 0) {
 		*float_out = 0.0;
+		return true;
+	}
+	if (_stricmp(str, "-0.0") == 0 || _stricmp(str, "-0") == 0) {
+		*float_out = -0.0;
 		return true;
 	}
 	*float_out = (float)strtod(str, (char**)NULL);
