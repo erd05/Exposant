@@ -153,6 +153,22 @@
   <ItemGroup>
     <ClCompile Include="Exposant.c" />
   </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="check.sh">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="runTests.sh">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="test_exposant.sh">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\UtilitairesLib\UtilitairesLib.vcxproj">
+      <Project>{38707d2d-d84a-4eb3-986e-9325558ab6ee}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -19,4 +19,11 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="check.sh" />
+    <None Include="runTests.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="test_exposant.sh" />
+  </ItemGroup>
 </Project>
