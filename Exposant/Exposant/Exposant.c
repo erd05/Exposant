@@ -24,6 +24,11 @@ int main(int argc, char* argv[])
 	// Convertir le premier argument en unsigned int
 	unsigned u1 = asUnsigned(arg1);
 	printf("hex: %08X (%d)\n", u1, u1);
+	int nbits = 32;
+	char* buffer = malloc(32);
+	unsignedToBinStr(u1, buffer, nbits);
+	printf("bin: %s", buffer);
+
 
 	
 	return 0;
