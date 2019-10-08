@@ -168,7 +168,9 @@
     </ClCompile>
     <ClCompile Include="Tests_add.cpp" />
     <ClCompile Include="Tests_strToBool.cpp" />
+    <ClCompile Include="Tests_strToFloat.cpp" />
     <ClCompile Include="Tests_strToInt.cpp" />
+    <ClCompile Include="Tests_unsignedToBinStr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

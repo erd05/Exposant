@@ -48,6 +48,7 @@ bool strToFloat(const char* str, float* float_out)
 		return true;
 }
 
+
 void unsignedToBinStr(unsigned u, char buffer[], int nbits)
 {
 	int i;
@@ -58,3 +59,4 @@ void unsignedToBinStr(unsigned u, char buffer[], int nbits)
 		buffer[i] = ((u & mask) != 0) + '0';
 	}
 }
+
