@@ -25,9 +25,12 @@ int main(int argc, char* argv[])
 	unsigned u1 = asUnsigned(arg1);
 	printf("hex: %08X (%d)\n", u1, u1);
 	int nbits = 32;
-	char* buffer = malloc(32);
-	unsignedToBinStr(u1, buffer, nbits);
-	printf("bin: %s", buffer);
+	char binStr[32 + 1];
+	unsignedToBinStr(u1, binStr, nbits);
+	printf("bin: %s\n", binStr);
+
+	// Affiche les 23 caractères de la sous-chaine (de binStr) qui commence au neuvième caractère
+	printf("mantisse: %.23s", &binStr[9]);
 
 
 	
