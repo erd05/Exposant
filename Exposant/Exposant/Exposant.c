@@ -30,7 +30,11 @@ int main(int argc, char* argv[])
 	printf("bin: %s\n", binStr);
 
 	// Affiche les 23 caractères de la sous-chaine (de binStr) qui commence au neuvième caractère
-	printf("mantisse: %.23s", &binStr[9]);
+	printf("mantisse: %.23s\n", &binStr[9]);
+
+	printf("exposant brut: %.8s\n", &binStr[1]);
+	unsigned exposant = (u1 << 1) >> 24;
+	printf("exposant reel: %d - 127 = %d", exposant, exposant - 127);
 
 
 	
