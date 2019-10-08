@@ -1,5 +1,6 @@
 #include "utilitaires.h"
 #include <string.h>
+#include <stdlib.h>
 
 int add(int a, int b)
 {
@@ -30,4 +31,30 @@ bool strToInt(const char* str, int* int_out)
 	else
 		return true;
 
+}
+
+bool strToFloat(const char* str, float* float_out)
+{
+	if (_stricmp(str, "+0") == 0 || _stricmp(str, "0") == 0 || _stricmp(str, "-0") == 0 || _stricmp(str, "0.0") == 0 ||
+		_stricmp(str, "-0.0") == 0 || _stricmp(str, "+0.0") == 0) {
+		*float_out = 0.0;
+		return true;
+	}
+	*float_out = (float)strtod(str, (char**)NULL);
+	if (*float_out == 0.0) {
+		return false;
+	}
+	else
+		return true;
+}
+
+void unsignedToBinStr(unsigned u, char buffer[], int nbits)
+{
+	int i;
+	unsigned int mask = 1 << (nbits - 1);
+	buffer[nbits] = '\0';
+	for (i = 0; i < nbits; i++, mask >>= 1)
+	{
+		buffer[i] = ((u & mask) != 0) + '0';
+	}
 }
